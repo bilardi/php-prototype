@@ -8,29 +8,35 @@ See the development of this code step by step with [see-git-steps](https://githu
 ## Installation
 
 The package is self-consistent but if you want to test it-self, you download some vendors
+
 - Download [composer](https://getcomposer.org/)
+
 - Download vendors
-```./path/composer.phar install
-```
+
+    ./path/composer.phar install
+
 
 ## Usage
 
-Read the unit tests in [test](test) directory to use it. This is a best practice.
+Read the unit tests in [test/MyClassTest.php](test/MyClassTest.php) file to use it. This is a best practice.
 
 ## Development
 
 The PHP language is very permissive, so it exists a [PHP Standards Recommendations](http://www.php-fig.org/psr/) (PSR)
-- Test with PHP_CodeSniffer at least a PSR2 level
-```./vendor/bin/phpcs
-```
-- Resolve error of PSR levels
-```./vendor/bin/phpcbf
-```
+
+### Test with PHP_CodeSniffer at least a PSR2 level
+
+    ./vendor/bin/phpcs
+
+### Resolve error of PSR levels
+
+    ./vendor/bin/phpcbf
+
+### Test with PHPunit
 
 It is common use to test the code step by step and PHPunit is a good beginning for unit test and functional test
-- Test with PHPunit
-```./vendor/bin/phpunit
-```
+
+    ./vendor/bin/phpunit
 
 ## License
 
