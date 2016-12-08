@@ -38,4 +38,34 @@ class MyClassTest extends \PHPUnit_Framework_TestCase
         $myClass = new MyClass(false);
         $this->assertFalse($myClass->bar());
     }
+
+    /**
+     * Verifies if the class MyClass gets the foo value correctly
+     */
+    public function testMyClassGetsFooValue()
+    {
+        $myClass = new MyClass();
+        $this->assertFalse($myClass->foobar());
+
+        $myClass = new MyClass(true);
+        $this->assertFalse($myClass->foobar());
+
+        $myClass = new MyClass(false);
+        $this->assertTrue($myClass->foobar());
+    }
+
+    /**
+     * Verifies if the class MyClass gets the baz value correctly
+     */
+    public function testMyClassGetsBazValue()
+    {
+        $myClass = new MyClass();
+        $tests = [];
+
+        for ($i = 0; $i < 10; $i++) {
+            array_push($tests, $myClass->baz());
+        }
+
+        $this->assertContainsOnly('boolean', $tests);
+    }
 }
