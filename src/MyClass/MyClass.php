@@ -2,6 +2,7 @@
 
 namespace MyClass;
 
+use MyClass\MyClassAbstract;
 use MyClass\MyClassInterface;
 
 /**
@@ -15,7 +16,7 @@ use MyClass\MyClassInterface;
  * @author Alessandra Bilardi <alessandra.bilardi@gmail.com>
  * @see https://github.com/bilardi/php-prototype for details
  */
-class MyClass implements MyClassInterface
+class MyClass extends MyClassAbstract implements MyClassInterface
 {
     protected $bar;
 
@@ -31,6 +32,16 @@ class MyClass implements MyClassInterface
     }
 
     /**
+     * Get reverse of $foo value
+     *
+     * @return boolean
+     */
+    protected function foo($foo)
+    {
+        return !$foo;
+    }
+
+    /**
      * Get bar value
      *
      * @return boolean
@@ -38,5 +49,15 @@ class MyClass implements MyClassInterface
     public function bar()
     {
         return $this->bar;
+    }
+
+    /**
+     * Foobar
+     *
+     * @return boolean
+     */
+    public function foobar()
+    {
+        return $this->foo($this->bar());
     }
 }
