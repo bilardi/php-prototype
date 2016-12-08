@@ -23,4 +23,19 @@ class MyClassTest extends \PHPUnit_Framework_TestCase
     {
         $myClass = new MyClass();
     }
+
+    /**
+     * Verifies if the class MyClass gets the bar value correctly
+     */
+    public function testMyClassGetsBarValue()
+    {
+        $myClass = new MyClass();
+        $this->assertTrue($myClass->bar());
+
+        $myClass = new MyClass(true);
+        $this->assertTrue($myClass->bar());
+
+        $myClass = new MyClass(false);
+        $this->assertFalse($myClass->bar());
+    }
 }
